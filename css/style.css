@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f3f5;
+}
+.carousel-box {
+  padding: 0px;
+}
+.center-carousel {
+  transform: translateY(30px);
+}
+.center-carousel img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
