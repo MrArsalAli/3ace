@@ -11,44 +11,46 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="container-fluid main-carousel-container">
-      <div class="row justify-content-between align-items-center">
-        <!-- Carousel 1 -->
-        <div class="col carousel-box">
-          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"></div>
+    <!-- Hero Section with Olive Background -->
+    <section id="hero-section" class="position-sticky top-0">
+      <div class="container-fluid main-carousel-container">
+        <div class="row justify-content-between align-items-center">
+          <!-- Carousel 1 -->
+          <div class="col carousel-box">
+            <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner"></div>
+            </div>
           </div>
-        </div>
-
-        <!-- Carousel 2 -->
-        <div class="col carousel-box">
-          <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"></div>
+          <!-- Carousel 2 -->
+          <div class="col carousel-box">
+            <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner"></div>
+            </div>
           </div>
-        </div>
-
-        <!-- Center Carousel -->
-        <div class="col carousel-box center-carousel">
-          <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"></div>
+          <!-- Center Carousel -->
+          <div class="col carousel-box center-carousel">
+            <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner"></div>
+            </div>
           </div>
-        </div>
-
-        <!-- Carousel 4 -->
-        <div class="col carousel-box">
-          <div id="carousel4" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"></div>
+          <!-- Carousel 4 -->
+          <div class="col carousel-box">
+            <div id="carousel4" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner"></div>
+            </div>
           </div>
-        </div>
-
-        <!-- Carousel 5 -->
-        <div class="col carousel-box">
-          <div id="carousel5" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner"></div>
+          <!-- Carousel 5 -->
+          <div class="col carousel-box">
+            <div id="carousel5" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Scrollable White Section -->
+    <section style="height: 40vh; background: white"></section>
 
     <div class="container-fluid small-carousels-container">
       <!-- Carousel 1 -->
@@ -100,55 +102,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Image sets for each carousel
         const imageSets = [
           [
-            "../assets/images/blackshirtbuddy.jpeg",
-            "../assets/images/blueshirtbuddy.jpeg",
-            "../assets/images/greenshirtbuddy.jpeg",
-            "../assets/images/jeansshirtbuddy.jpeg",
-            "../assets/images/redshirtbuddy.jpeg",
+            "../assets/images/blackshirtbuddy.png",
+            "../assets/images/blueshirtbuddy.png",
+            "../assets/images/greenshirtbuddy.png",
+            "../assets/images/jeansshirtbuddy.png",
+            "../assets/images/redshirtbuddy.png",
           ],
           [
-            "../assets/images/blueshirtbuddy.jpeg",
-            "../assets/images/greenshirtbuddy.jpeg",
-            "../assets/images/jeansshirtbuddy.jpeg",
-            "../assets/images/redshirtbuddy.jpeg",
-            "../assets/images/blackshirtbuddy.jpeg",
+            "../assets/images/blueshirtbuddy.png",
+            "../assets/images/greenshirtbuddy.png",
+            "../assets/images/jeansshirtbuddy.png",
+            "../assets/images/redshirtbuddy.png",
+            "../assets/images/blackshirtbuddy.png",
           ],
           [
-            "../assets/images/greenshirtbuddy.jpeg",
-            "../assets/images/jeansshirtbuddy.jpeg",
-            "../assets/images/redshirtbuddy.jpeg",
-            "../assets/images/blackshirtbuddy.jpeg",
-            "../assets/images/blueshirtbuddy.jpeg",
+            "../assets/images/greenshirtbuddy.png",
+            "../assets/images/jeansshirtbuddy.png",
+            "../assets/images/redshirtbuddy.png",
+            "../assets/images/blackshirtbuddy.png",
+            "../assets/images/blueshirtbuddy.png",
           ],
           [
-            "../assets/images/jeansshirtbuddy.jpeg",
-            "../assets/images/redshirtbuddy.jpeg",
-            "../assets/images/blackshirtbuddy.jpeg",
-            "../assets/images/blueshirtbuddy.jpeg",
-            "../assets/images/greenshirtbuddy.jpeg",
+            "../assets/images/jeansshirtbuddy.png",
+            "../assets/images/redshirtbuddy.png",
+            "../assets/images/blackshirtbuddy.png",
+            "../assets/images/blueshirtbuddy.png",
+            "../assets/images/greenshirtbuddy.png",
           ],
           [
-            "../assets/images/redshirtbuddy.jpeg",
-            "../assets/images/blackshirtbuddy.jpeg",
-            "../assets/images/blueshirtbuddy.jpeg",
-            "../assets/images/greenshirtbuddy.jpeg",
-            "../assets/images/jeansshirtbuddy.jpeg",
+            "../assets/images/redshirtbuddy.png",
+            "../assets/images/blackshirtbuddy.png",
+            "../assets/images/blueshirtbuddy.png",
+            "../assets/images/greenshirtbuddy.png",
+            "../assets/images/jeansshirtbuddy.png",
           ],
         ];
 
-        // Initialize all carousels
         for (let i = 1; i <= 5; i++) {
           const carouselInner = document.querySelector(
             `#carousel${i} .carousel-inner`
           );
-
-          // Clear any existing items
           carouselInner.innerHTML = "";
 
-          // Add images to carousel
           imageSets[i - 1].forEach((src, index) => {
             const itemDiv = document.createElement("div");
             itemDiv.className =
@@ -163,7 +160,6 @@
             carouselInner.appendChild(itemDiv);
           });
 
-          // Initialize carousel with fast sliding (500ms interval)
           new bootstrap.Carousel(document.getElementById(`carousel${i}`), {
             interval: 4000,
             ride: "carousel",
@@ -210,26 +206,20 @@
           ],
         ];
 
-        // Initialize all small carousels
         for (let i = 1; i <= 5; i++) {
           const carouselInner = document.querySelector(
             `#smallCarousel${i} .carousel-inner`
           );
-
           smallImageSets[i - 1].forEach((src, index) => {
             const item = document.createElement("div");
             item.className = `carousel-item ${index === 0 ? "active" : ""}`;
-
             const img = document.createElement("img");
             img.src = src;
             img.className = "d-block w-100";
             img.alt = `Slide ${index + 1}`;
-
             item.appendChild(img);
             carouselInner.appendChild(item);
           });
-
-          // Initialize with fast sliding (1.5 seconds)
           new bootstrap.Carousel(`#smallCarousel${i}`, {
             interval: 4000,
             ride: "carousel",
@@ -237,6 +227,40 @@
             wrap: true,
           });
         }
+
+        // Get elements
+        const hero = document.getElementById("hero-section");
+        const smallCarousels = document.querySelector(
+          ".small-carousels-container"
+        );
+
+        // Initially hide small carousels
+        smallCarousels.style.display = "none";
+        smallCarousels.style.opacity = "0";
+        smallCarousels.style.transform = "scale(0.9)";
+        smallCarousels.style.transition = "all 0.6s ease";
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 10) {
+            // Reduced from 50 to 10 for quicker trigger
+            hero.classList.add("white-bg");
+            // Show small carousels immediately with animation
+            smallCarousels.style.display = "flex";
+            smallCarousels.style.opacity = "1";
+            smallCarousels.style.transform = "scale(1)";
+
+            // Move small carousels up by reducing margin-top
+            smallCarousels.style.marginTop = "20px";
+          } else {
+            hero.classList.remove("white-bg");
+            smallCarousels.style.opacity = "0";
+            smallCarousels.style.transform = "scale(0.9)";
+            smallCarousels.style.marginTop = "100px";
+            setTimeout(() => {
+              smallCarousels.style.display = "none";
+            }, 600);
+          }
+        });
       });
     </script>
   </body>
