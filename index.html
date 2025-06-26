@@ -11,7 +11,7 @@
     <style>
       /* Navbar */
       .navbar {
-        height: 20vh;
+        height: 10vh;
         background: #373e02;
         position: fixed;
         top: 0;
@@ -20,18 +20,16 @@
         transition: all 0.5s ease;
       }
 
-      /* Main Container */
-      #main-container {
-        margin-top: 20vh; /* Space for navbar */
-      }
-
       /* Hero Section */
       #hero-section {
-        background-color: #373e02;
-        transition: all 0.5s ease;
+        background-image: url("./assets/images/bg.png");
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        margin-top: 10vh;
         position: relative;
         z-index: 1;
-        height: 76vh; /* Your original height */
+        height: 90vh;
       }
 
       /* Small Carousels Container */
@@ -50,24 +48,30 @@
         padding: 0px;
       }
       .center-carousel {
-        transform: translateY(100px);
+        transform: translateY(198px);
         z-index: 2;
       }
+      #carousel1 {
+        transform: translateY(80px);
+      }
+      #carousel5 {
+        transform: translateY(80px);
+      }
       #carousel2 {
-        transform: translateY(66px);
+        transform: translateY(158px);
       }
       #carousel4 {
-        transform: translateY(66px);
+        transform: translateY(158px);
       }
       .center-carousel img,
       .carousel-item img {
-        height: 60vh; /* Your original height */
+        height: 52vh;
         object-fit: cover;
         transition: all 0.3s ease;
       }
       .small-carousel {
         flex: 1;
-        height: 24vh; /* Your original height */
+        height: 24vh;
         min-width: 0;
       }
       .small-carousel .carousel-inner {
@@ -79,13 +83,17 @@
         object-fit: cover;
         transition: all 0.3s ease;
       }
+
+      .small-carousel img:hover {
+        transform: scale(1.1);
+      }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-dark">
-      <div class="container">
+      <!-- <div class="container">
         <span class="navbar-brand">Your Logo</span>
-      </div>
+      </div> -->
     </nav>
 
     <!-- Main Content -->
@@ -202,41 +210,45 @@
       document.addEventListener("DOMContentLoaded", function () {
         const imageSets = [
           [
-            "../assets/images/blackshirtbuddy.png",
-            "../assets/images/blueshirtbuddy.png",
-            "../assets/images/greenshirtbuddy.png",
-            "../assets/images/jeansshirtbuddy.png",
-            "../assets/images/redshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/images/blueshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/images/redshirtbuddy.png",
           ],
           [
-            "../assets/images/blueshirtbuddy.png",
-            "../assets/images/greenshirtbuddy.png",
-            "../assets/images/jeansshirtbuddy.png",
-            "../assets/images/redshirtbuddy.png",
-            "../assets/images/blackshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirtbuddy.png",
           ],
           [
-            "../assets/images/greenshirtbuddy.png",
-            "../assets/images/jeansshirtbuddy.png",
-            "../assets/images/redshirtbuddy.png",
-            "../assets/images/blackshirtbuddy.png",
-            "../assets/images/blueshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirtbuddy.png",
           ],
           [
-            "../assets/images/jeansshirtbuddy.png",
-            "../assets/images/redshirtbuddy.png",
-            "../assets/images/blackshirtbuddy.png",
-            "../assets/images/blueshirtbuddy.png",
-            "../assets/images/greenshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirtbuddy.png",
           ],
           [
-            "../assets/images/redshirtbuddy.png",
-            "../assets/images/blackshirtbuddy.png",
-            "../assets/images/blueshirtbuddy.png",
-            "../assets/images/greenshirtbuddy.png",
-            "../assets/images/jeansshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirtbuddy.png",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirtbuddy.png",
           ],
         ];
+
+        // Store carousel instances
+        const carousels = [];
+        const smallCarousels = [];
 
         for (let i = 1; i <= 5; i++) {
           const carouselInner = document.querySelector(
@@ -258,48 +270,64 @@
             carouselInner.appendChild(itemDiv);
           });
 
-          new bootstrap.Carousel(document.getElementById(`carousel${i}`), {
-            interval: 4000,
-            ride: "carousel",
-            pause: false,
-            wrap: true,
-          });
+          const carousel = new bootstrap.Carousel(
+            document.getElementById(`carousel${i}`),
+            {
+              interval: 4000,
+              ride: "carousel",
+              pause: false,
+              wrap: true,
+            }
+          );
+          carousels.push(carousel);
+
+          // Add hover events
+          document
+            .getElementById(`carousel${i}`)
+            .addEventListener("mouseenter", () => {
+              carousel.pause();
+            });
+          document
+            .getElementById(`carousel${i}`)
+            .addEventListener("mouseleave", () => {
+              carousel.cycle();
+            });
         }
 
         const smallImageSets = [
           [
-            "../assets/images/blackshirt.jpeg",
-            "../assets/images/blueshirt.jpeg",
-            "../assets/images/greenshirt.jpeg",
-            "../assets/images/jeansshirt.jpeg",
-            "../assets/images/redshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirt.jpeg",
           ],
           [
-            "../assets/images/blueshirt.jpeg",
-            "../assets/images/greenshirt.jpeg",
-            "../assets/images/jeansshirt.jpeg",
-            "../assets/images/redshirt.jpeg",
-            "../assets/images/blackshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirt.jpeg",
           ],
           [
-            "../assets/images/greenshirt.jpeg",
-            "../assets/images/jeansshirt.jpeg",
-            "../assets/images/redshirt.jpeg",
-            "../assets/images/blackshirt.jpeg",
-            "../assets/images/blueshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirt.jpeg",
           ],
           [
-            "../assets/images/jeansshirt.jpeg",
-            "../assets/images/redshirt.jpeg",
-            "../assets/images/blackshirt.jpeg",
-            "../assets/images/blueshirt.jpeg",
-            "../assets/images/greenshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/jeansshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirt.jpeg",
           ],
           [
-            "../assets/images/redshirt.jpeg",
-            "../assets/images/blackshirt.jpeg",
-            "../assets/images/blueshirt.jpeg",
-            "../assets/images/greenshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/redshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blackshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/blueshirt.jpeg",
+            "https://darkslateblue-dragonfly-114536.hostingersite.com/wp-content/uploads/2025/06/greenshirt.jpeg",
             "../assets/images/jeansshirt.jpeg",
           ],
         ];
@@ -318,12 +346,25 @@
             item.appendChild(img);
             carouselInner.appendChild(item);
           });
-          new bootstrap.Carousel(`#smallCarousel${i}`, {
+          const smallCarousel = new bootstrap.Carousel(`#smallCarousel${i}`, {
             interval: 4000,
             ride: "carousel",
             pause: false,
             wrap: true,
           });
+          smallCarousels.push(smallCarousel);
+
+          // Add hover events
+          document
+            .getElementById(`smallCarousel${i}`)
+            .addEventListener("mouseenter", () => {
+              smallCarousel.pause();
+            });
+          document
+            .getElementById(`smallCarousel${i}`)
+            .addEventListener("mouseleave", () => {
+              smallCarousel.cycle();
+            });
         }
 
         window.addEventListener("scroll", function () {
@@ -335,21 +376,25 @@
           );
 
           if (scrollY > 50) {
-            // Hide navbar and change background
+            // Hide navbar and change hero section
             navbar.style.opacity = "0";
             navbar.style.pointerEvents = "none";
+
+            // 👇 Remove background image and set white
+            hero.style.backgroundImage = "none";
             hero.style.backgroundColor = "white";
 
-            // Show small carousels
             smallCarousels.style.opacity = "1";
             smallCarousels.style.transform = "translateY(0)";
           } else {
-            // Show navbar and restore green
+            // Show navbar and restore background image
             navbar.style.opacity = "1";
             navbar.style.pointerEvents = "auto";
-            hero.style.backgroundColor = "#373e02";
 
-            // Hide small carousels
+            // 👇 Restore background image
+            hero.style.backgroundImage = "url('./assets/images/bg.png')";
+            hero.style.backgroundColor = "#373e02"; // optional, depends on design
+
             smallCarousels.style.opacity = "0";
             smallCarousels.style.transform = "translateY(20px)";
           }
