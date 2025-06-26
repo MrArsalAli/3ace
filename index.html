@@ -23,13 +23,14 @@
       /* Hero Section */
       #hero-section {
         background-image: url("./assets/images/bg.png");
-        background-size: cover;
-        background-position: top center;
+        background-size: 100% 100%; /* Changed from 'contain' to 'cover' */
+        background-position: center center;
         background-repeat: no-repeat;
         margin-top: 10vh;
         min-height: 90vh;
         display: flex;
         align-items: center;
+        width: 100%; /* Ensure full width */
       }
 
       /* Small Carousels Container */
@@ -50,23 +51,23 @@
       }
 
       .center-carousel {
-        transform: translateY(20%);
+        transform: translateY(-2%);
         z-index: 2;
       }
 
       .carouselone,
       .carouselfive {
-        transform: translateY(0%);
+        transform: translateY(-32%);
       }
 
       .carouseltwo,
       .carouselfour {
-        transform: translateY(10%);
+        transform: translateY(-16%);
       }
 
       .center-carousel img,
       .carousel-item img {
-        height: 42vh;
+        height: 46vh;
         object-fit: cover;
         width: 100%;
         transition: all 0.3s ease;
@@ -94,9 +95,9 @@
   </head>
   <body>
     <nav class="navbar navbar-dark">
-      <!-- <div class="container">
+      <div class="container">
         <span class="navbar-brand">Your Logo</span>
-      </div> -->
+      </div>
     </nav>
 
     <!-- Main Content -->
@@ -384,7 +385,7 @@
             navbar.style.pointerEvents = "none";
 
             // 👇 Remove background image and set white
-            hero.style.backgroundImage = "none";
+            hero.style.backgroundImage = "url('./assets/images/bg1.png')";
             hero.style.backgroundColor = "white";
 
             smallCarousels.style.opacity = "1";
