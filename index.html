@@ -27,9 +27,9 @@
         background-position: top center;
         background-repeat: no-repeat;
         margin-top: 10vh;
-        position: relative;
-        z-index: 1;
-        height: 90vh;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
       }
 
       /* Small Carousels Container */
@@ -45,30 +45,33 @@
 
       /* Your EXACT original carousel styles */
       .carousel-box {
-        padding: 0px;
+        height: 42vh;
+        padding: 0;
       }
+
       .center-carousel {
-        transform: translateY(198px);
+        transform: translateY(20%);
         z-index: 2;
       }
-      #carousel1 {
-        transform: translateY(80px);
+
+      .carouselone,
+      .carouselfive {
+        transform: translateY(0%);
       }
-      #carousel5 {
-        transform: translateY(80px);
+
+      .carouseltwo,
+      .carouselfour {
+        transform: translateY(10%);
       }
-      #carousel2 {
-        transform: translateY(158px);
-      }
-      #carousel4 {
-        transform: translateY(158px);
-      }
+
       .center-carousel img,
       .carousel-item img {
-        height: 52vh;
+        height: 42vh;
         object-fit: cover;
+        width: 100%;
         transition: all 0.3s ease;
       }
+
       .small-carousel {
         flex: 1;
         height: 24vh;
@@ -103,7 +106,7 @@
         <div class="container-fluid">
           <div class="row justify-content-between align-items-center">
             <!-- Carousel 1 -->
-            <div class="col carousel-box">
+            <div class="col carouselone carousel-box">
               <div
                 id="carousel1"
                 class="carousel slide"
@@ -113,7 +116,7 @@
               </div>
             </div>
             <!-- Carousel 2 -->
-            <div class="col carousel-box">
+            <div class="col carouseltwo carousel-box">
               <div
                 id="carousel2"
                 class="carousel slide"
@@ -133,7 +136,7 @@
               </div>
             </div>
             <!-- Carousel 4 -->
-            <div class="col carousel-box">
+            <div class="col carouselfour carousel-box">
               <div
                 id="carousel4"
                 class="carousel slide"
@@ -143,7 +146,7 @@
               </div>
             </div>
             <!-- Carousel 5 -->
-            <div class="col carousel-box">
+            <div class="col carouselfive carousel-box">
               <div
                 id="carousel5"
                 class="carousel slide"
